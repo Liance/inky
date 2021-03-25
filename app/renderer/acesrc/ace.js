@@ -4827,15 +4827,21 @@ var Selection = function(session) {
     this.moveCursorWordRight = function() {
         if (this.session.$selectLongWords)
             this.moveCursorLongWordRight();
-        else
+    else
+        {
             this.moveCursorShortWordRight();
+            this.moveCursorShortWordRight();
+        }
     };
 
     this.moveCursorWordLeft = function() {
         if (this.session.$selectLongWords)
             this.moveCursorLongWordLeft();
         else
+        {
             this.moveCursorShortWordLeft();
+            this.moveCursorShortWordLeft();
+        }
     };
     this.moveCursorBy = function(rows, chars) {
         var screenPos = this.session.documentToScreenPosition(
