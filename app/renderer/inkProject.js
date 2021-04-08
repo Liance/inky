@@ -196,7 +196,7 @@ InkProject.prototype.startFileWatching = function() {
         if (!isInkFile(newlyFoundAbsFilePath)) { return; }
 
         var relPath = path.relative(this.mainInk.projectDir, newlyFoundAbsFilePath);
-        var existingFile = _.find(this.files, f => f.relativePath() == relPath);
+        var existingFile = _.find(this.files, f => f.relativePath().replace(/[\\/]/g,'/') == relPath.replace(/[\\/]/g,'/')));
         if( !existingFile ) {
             console.log("Watch found new file - creating it: "+relPath);
 
